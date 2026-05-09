@@ -1,23 +1,15 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/index.ts",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index.ts"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "env": {
+    "MONGO_URI": "@MONGO_URI",
+    "JWT_SECRET": "@JWT_SECRET",
+    "JWT_EXPIRE": "@JWT_EXPIRE",
+    "MAIL_HOST": "@MAIL_HOST",
+    "MAIL_PORT": "@MAIL_PORT",
+    "MAIL_USER": "@MAIL_USER",
+    "MAIL_PASS": "@MAIL_PASS",
+    "MAIL_SECURE": "@MAIL_SECURE"
+  }
 }
